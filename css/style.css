@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 :root {
-  --primary-color: #047aed;
+  --primary-color: #da0a0acb;
   --secondary-color: #1c3fa8;
-  --dark-color: #002240;
+  --dark-color: #000000;
   --light-color: #f4f4f4;
   --success-color: #5cb85c;
   --error-color: #d9534f;
@@ -19,6 +19,7 @@ body {
   font-family: 'Lato', sans-serif;
   color: #333;
   line-height: 1.6;
+  
 }
 
 ul {
@@ -45,17 +46,14 @@ img {
   width: 100%;
 }
 
-code,
-pre {
-  background: #333;
-  color: #fff;
-  padding: 10px;
-}
+
 
 .hidden {
   visibility: hidden;
   height: 0;
 }
+
+
 
 /* Navbar */
 .navbar {
@@ -81,6 +79,8 @@ pre {
 .navbar .flex {
   justify-content: space-between;
 }
+
+
 
 /* Showcase */
 .showcase {
@@ -111,7 +111,7 @@ pre {
 .showcase-form {
   position: relative;
   top: 60px;
-  height: 350px;
+  height: relative;
   width: 400px;
   padding: 40px;
   z-index: 100;
@@ -151,6 +151,8 @@ pre {
   -ms-transform: skewY(-3deg);
 }
 
+
+
 /* Stats */
 .stats {
   padding-top: 100px;
@@ -171,91 +173,207 @@ pre {
   font-weight: bold;
 }
 
-/* Cli */
-.cli .grid {
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
 
-.cli .grid > *:first-child {
+
+/* feeling-stuck */
+.feeling-stuck .grid {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.container img{
+  margin-left: auto;
+  margin-right:auto;
+  width:60%;
+  height:auto;
+}
+.feeling-stuck .grid > *:first-child {
   grid-column: 1 / span 2;
   grid-row: 1 / span 2;
 }
 
-/* Cloud */
-.cloud .grid {
+
+
+/* committed */
+.committed .grid {
   grid-template-columns: 4fr 3fr;
 }
 
-/* Languages */
 
-.languages .flex {
+
+/* Gallery */
+
+.gallery {
+  position: relative;
+}
+.gallery .image-container{
+  display:flex;
   flex-wrap: wrap;
+  gap:15px;
+  justify-content: center;
+  padding:10px;
+  background:#ffffff;
+}
+.gallery .image-container .image{
+  height: 250px;
+  width: 350px;
+  border:10px solid #ffffff;
+  
+  overflow:hidden;
+  cursor: pointer;
+}
+.gallery .image-container .image img{
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+  transition: .2s linear;
+}
+.gallery .image-container .image:hover img{
+  transform: scale(1.1);
 }
 
-.languages .card {
-  text-align: center;
-  margin: 18px 10px 40px;
-  transition: transform 0.2s ease-in;
+.gallery .popup-image{
+  position: fixed;
+  top:0; left:0;
+  background:rgba(0, 0, 0, 0.9);
+  height:100%;
+  width:100%;
+  z-index: 100;
+  display:none;
+}
+.gallery .popup-image span{
+  position: absolute;
+  top:0; right:10px;
+  font-size:60px;
+  font-weight:bolder;
+  color:#fff;
+  cursor:pointer;
+  z-index: 100;
+}
+.gallery .popup-image img{
+  position: absolute;
+  top:50%; left:50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #fff;
+  border-radius: 5px;
+  width: 750px;
+  object-fit:cover;
 }
 
-.languages .card h4 {
-  font-size: 20px;
-  margin-bottom: 10px;
+
+
+
+
+
+/* Services */
+.services-sub-head {
+  padding-top:40px;
 }
 
-.languages .card:hover {
-  transform: translateY(-15px);
-}
-
-/* Features */
-.features-head img,
-.docs-head img {
-  width: 200px;
+.services-form {
+  position: relative;
+  top: 0px;
+  height: relative;
+  width: 100%;
+  padding: 40px;
+  z-index: 100;
   justify-self: flex-end;
 }
 
-.features-sub-head img {
-  width: 300px;
+.services-form .form-control {
+  margin: 30px 0;
+}
+.services-form {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10%;
+}
+
+.services-form input[type='text'],
+.services-form input[type='email'] {
+  border: 0;
+  border-bottom: 1px solid #b4becb;
+  width: 100%;
+  padding: 3px;
+  font-size: 16px;
+}
+
+.services-form input:focus {
+  outline: none;
+}
+
+
+
+
+/* about */
+table {
+  border-collapse: collapse;
+  justify-content: space-between;
+  width:100%;
+}
+
+th {
+  text-align: left; 
+  border-bottom: 1px #ccc solid;
+}
+
+td {
+  position: relative;
+  text-align: right;
+  border-bottom: 1px #ccc solid;
+}
+
+
+
+.about-head i{
+  justify-self: flex;
+  
+}
+
+.about-main img {
+  width: 90%;
   justify-self: flex-end;
 }
 
-.features-main .card > i {
-  margin-right: 20px;
+.about-main .container .grid {
+  overflow-x:hidden;
 }
 
-.features-main .grid {
-  padding: 30px;
+.about-main .grid {
+  grid-template-columns: 2fr;
+  
 }
 
-.features-main .grid > *:first-child {
-  grid-column: 1 / span 3;
-}
-
-.features-main .grid > *:nth-child(2) {
-  grid-column: 1 / span 2;
-}
-
-/* Docs */
-.docs-main h3 {
-  margin: 20px 0;
-}
-
-.docs-main .grid {
-  grid-template-columns: 1fr 2fr;
-  align-items: flex-start;
-}
-
-.docs-main nav li {
+.about-main li {
   font-size: 17px;
   padding-bottom: 5px;
   margin-bottom: 5px;
   border-bottom: 1px #ccc solid;
 }
 
-.docs-main a:hover {
+.about-main a:hover {
   font-weight: bold;
 }
+
+
+/* Contact */
+.contact-main h3 {
+  margin: 20px 0;
+}
+
+
+
+.contact-main li {
+  font-size: 17px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px #ccc solid;
+}
+
+.contact-main a:hover {
+  font-weight: bold;
+}
+
 
 /* Footer */
 .footer .social a {
@@ -277,6 +395,8 @@ pre {
 .fa-twitter:hover {
   color: #1C9CEA;
 }
+
+
 
 /* Animations */
 @keyframes slideInFromLeft {
@@ -324,12 +444,16 @@ pre {
   .grid,
   .showcase .grid,
   .stats .grid,
-  .cli .grid,
-  .cloud .grid,
-  .features-main .grid,
-  .docs-main .grid {
+  .feeling-stuck .grid,
+  .committed .grid,
+  .services-sub-head .grid,
+  .about-main .grid {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+  }
+  
+  .navbar .logo {
+    font-size: medium;
   }
 
   .showcase {
@@ -348,26 +472,30 @@ pre {
     animation: slideInFromBottom 1s ease-in;
   }
 
-  .cli .grid > *:first-child {
+  .feeling-stuck .grid > *:first-child {
     grid-column: 1;
     grid-row: 1;
   }
 
-  .features-head,
-  .features-sub-head,
-  .docs-head {
+  .services-head,
+  .services-sub-head,
+  .about-head {
     text-align: center;
   }
 
-  .features-head img,
-  .features-sub-head img,
-  .docs-head img {
+  .services-head img,
+  .services-sub-head img,
+  .about-head img {
     justify-self: center;
   }
 
-  .features-main .grid > *:first-child,
-  .features-main .grid > *:nth-child(2) {
+  .services-sub-head .grid > *:first-child,
+  .services-sub-head .grid > *:nth-child(2) {
     grid-column: 1;
+  }
+
+  .gallery .popup-image img{
+    width:75%;
   }
 }
 
